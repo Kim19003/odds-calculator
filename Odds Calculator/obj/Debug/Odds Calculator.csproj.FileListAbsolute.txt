@@ -1,0 +1,10 @@
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\bin\Debug\Odds Calculator.exe.config
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\bin\Debug\Odds Calculator.exe
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\bin\Debug\Odds Calculator.pdb
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calculator.csprojAssemblyReference.cache
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds_Calculator.Form1.resources
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds_Calculator.Properties.Resources.resources
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.GenerateResource.cache
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calculator.exe
+C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calculator.pdb
