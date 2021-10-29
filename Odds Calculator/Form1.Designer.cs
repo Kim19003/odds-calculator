@@ -29,14 +29,15 @@ namespace Odds_Calculator
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.leftPerCentBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rightPerCentBox = new System.Windows.Forms.TextBox();
-            this.proceedButton = new System.Windows.Forms.Button();
-            this.leftOddsLabel = new System.Windows.Forms.Label();
-            this.rightOddsLabel = new System.Windows.Forms.Label();
-            this.breakpointBox = new System.Windows.Forms.ComboBox();
             this.resetButton = new System.Windows.Forms.Button();
+            this.breakpointBox = new System.Windows.Forms.ComboBox();
+            this.rightOddsLabel = new System.Windows.Forms.Label();
+            this.leftOddsLabel = new System.Windows.Forms.Label();
+            this.proceedButton = new System.Windows.Forms.Button();
+            this.rightPerCentBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,60 +71,17 @@ namespace Odds_Calculator
             this.panel1.Size = new System.Drawing.Size(123, 228);
             this.panel1.TabIndex = 1;
             // 
-            // rightPerCentBox
+            // resetButton
             // 
-            this.rightPerCentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightPerCentBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.rightPerCentBox.Location = new System.Drawing.Point(64, 43);
-            this.rightPerCentBox.MaxLength = 2;
-            this.rightPerCentBox.Name = "rightPerCentBox";
-            this.rightPerCentBox.Size = new System.Drawing.Size(43, 31);
-            this.rightPerCentBox.TabIndex = 1;
-            this.rightPerCentBox.TabStop = false;
-            this.rightPerCentBox.Text = "%";
-            this.rightPerCentBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.rightPerCentBox.TextChanged += new System.EventHandler(this.rightPerCentBox_TextChanged);
-            this.rightPerCentBox.Enter += new System.EventHandler(this.rightPerCentBox_Enter);
-            this.rightPerCentBox.Leave += new System.EventHandler(this.rightPerCentBox_Leave);
-            // 
-            // proceedButton
-            // 
-            this.proceedButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.proceedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.proceedButton.Location = new System.Drawing.Point(15, 80);
-            this.proceedButton.Name = "proceedButton";
-            this.proceedButton.Size = new System.Drawing.Size(92, 29);
-            this.proceedButton.TabIndex = 2;
-            this.proceedButton.TabStop = false;
-            this.proceedButton.Text = "Proceed";
-            this.proceedButton.UseVisualStyleBackColor = true;
-            this.proceedButton.Click += new System.EventHandler(this.proceedButton_Click);
-            // 
-            // leftOddsLabel
-            // 
-            this.leftOddsLabel.AutoSize = true;
-            this.leftOddsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.leftOddsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.leftOddsLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.leftOddsLabel.Location = new System.Drawing.Point(13, 119);
-            this.leftOddsLabel.Name = "leftOddsLabel";
-            this.leftOddsLabel.Size = new System.Drawing.Size(45, 24);
-            this.leftOddsLabel.TabIndex = 3;
-            this.leftOddsLabel.Text = "1.55";
-            this.leftOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // rightOddsLabel
-            // 
-            this.rightOddsLabel.AutoSize = true;
-            this.rightOddsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rightOddsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rightOddsLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.rightOddsLabel.Location = new System.Drawing.Point(64, 119);
-            this.rightOddsLabel.Name = "rightOddsLabel";
-            this.rightOddsLabel.Size = new System.Drawing.Size(45, 24);
-            this.rightOddsLabel.TabIndex = 4;
-            this.rightOddsLabel.Text = "1.55";
-            this.rightOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.resetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.resetButton.Location = new System.Drawing.Point(35, 192);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(49, 23);
+            this.resetButton.TabIndex = 6;
+            this.resetButton.TabStop = false;
+            this.resetButton.Text = "Reset";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // breakpointBox
             // 
@@ -152,17 +110,60 @@ namespace Odds_Calculator
             this.breakpointBox.TabIndex = 5;
             this.breakpointBox.TabStop = false;
             // 
-            // resetButton
+            // rightOddsLabel
             // 
-            this.resetButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetButton.Location = new System.Drawing.Point(35, 192);
-            this.resetButton.Name = "resetButton";
-            this.resetButton.Size = new System.Drawing.Size(49, 23);
-            this.resetButton.TabIndex = 6;
-            this.resetButton.TabStop = false;
-            this.resetButton.Text = "Reset";
-            this.resetButton.UseVisualStyleBackColor = true;
-            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            this.rightOddsLabel.AutoSize = true;
+            this.rightOddsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(255)))));
+            this.rightOddsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rightOddsLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.rightOddsLabel.Location = new System.Drawing.Point(64, 119);
+            this.rightOddsLabel.Name = "rightOddsLabel";
+            this.rightOddsLabel.Size = new System.Drawing.Size(45, 24);
+            this.rightOddsLabel.TabIndex = 4;
+            this.rightOddsLabel.Text = "1.55";
+            this.rightOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // leftOddsLabel
+            // 
+            this.leftOddsLabel.AutoSize = true;
+            this.leftOddsLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(154)))), ((int)(((byte)(255)))));
+            this.leftOddsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leftOddsLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.leftOddsLabel.Location = new System.Drawing.Point(13, 119);
+            this.leftOddsLabel.Name = "leftOddsLabel";
+            this.leftOddsLabel.Size = new System.Drawing.Size(45, 24);
+            this.leftOddsLabel.TabIndex = 3;
+            this.leftOddsLabel.Text = "1.55";
+            this.leftOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // proceedButton
+            // 
+            this.proceedButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.proceedButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proceedButton.Location = new System.Drawing.Point(15, 80);
+            this.proceedButton.Name = "proceedButton";
+            this.proceedButton.Size = new System.Drawing.Size(92, 29);
+            this.proceedButton.TabIndex = 2;
+            this.proceedButton.TabStop = false;
+            this.proceedButton.Text = "Proceed";
+            this.proceedButton.UseVisualStyleBackColor = true;
+            this.proceedButton.Click += new System.EventHandler(this.proceedButton_Click);
+            // 
+            // rightPerCentBox
+            // 
+            this.rightPerCentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rightPerCentBox.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.rightPerCentBox.Location = new System.Drawing.Point(64, 43);
+            this.rightPerCentBox.MaxLength = 2;
+            this.rightPerCentBox.Name = "rightPerCentBox";
+            this.rightPerCentBox.Size = new System.Drawing.Size(43, 31);
+            this.rightPerCentBox.TabIndex = 1;
+            this.rightPerCentBox.TabStop = false;
+            this.rightPerCentBox.Text = "%";
+            this.rightPerCentBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rightPerCentBox.TextChanged += new System.EventHandler(this.rightPerCentBox_TextChanged);
+            this.rightPerCentBox.Enter += new System.EventHandler(this.rightPerCentBox_Enter);
+            this.rightPerCentBox.Leave += new System.EventHandler(this.rightPerCentBox_Leave);
             // 
             // Form1
             // 
@@ -171,6 +172,7 @@ namespace Odds_Calculator
             this.ClientSize = new System.Drawing.Size(257, 298);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Odds Calculator";
             this.panel1.ResumeLayout(false);
