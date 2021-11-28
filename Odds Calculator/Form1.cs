@@ -19,6 +19,17 @@ namespace Odds_Calculator
             Reset();
         }
 
+        private void Form_Load(object sender, EventArgs e)
+        {
+            Location = new Point(Properties.Settings.Default.Location.X, Properties.Settings.Default.Location.Y);
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Location = Location;
+            Properties.Settings.Default.Save();
+        }
+
         private void leftPerCentBox_TextChanged(object sender, EventArgs e)
         {
             if (leftPerCentBox.ForeColor == SystemColors.GrayText)
