@@ -101,6 +101,9 @@ namespace Odds_Calculator
             if (ValuesAllowed(leftPerCentBox, rightPerCentBox))
             {
                 CalculateOdds(double.Parse(breakpointBox.Text.Replace('.', ',')));
+
+                upperTeamNameDisplayBox.Text = leftTeamNameBox.Text;
+                lowerTeamNameDisplayBox.Text = rightTeamNameBox.Text;
             }
         }
 
@@ -116,7 +119,7 @@ namespace Odds_Calculator
 
             if (leftOdds > 1.00)
             {
-                leftOddsLabel.Text = leftOdds.ToString("0.00");
+                leftOddsLabel.Text = leftOdds.ToString("0.00").Replace(',', '.');
             }
             else
             {
@@ -128,7 +131,7 @@ namespace Odds_Calculator
 
             if (rightOdds > 1.00)
             {
-                rightOddsLabel.Text = rightOdds.ToString("0.00");
+                rightOddsLabel.Text = rightOdds.ToString("0.00").Replace(',', '.');
             }
             else
             {
@@ -193,6 +196,12 @@ namespace Odds_Calculator
 
             leftOddsLabel.Text = "";
             rightOddsLabel.Text = "";
+
+            leftTeamNameBox.Text = "";
+            rightTeamNameBox.Text = "";
+
+            upperTeamNameDisplayBox.Text = "";
+            lowerTeamNameDisplayBox.Text = "";
 
             breakpointBox.Text = "1.85";
         }
