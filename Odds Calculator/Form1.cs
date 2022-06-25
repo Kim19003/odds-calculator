@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,15 @@ namespace Odds_Calculator
 {
     public partial class Form1 : Form
     {
+        public const string AppName = "Odds Calculator";
+
         public Form1()
         {
             InitializeComponent();
 
-            Reset();
+            //Reset();
+
+            selectTeamComboBox.SelectedItem = "Unibet";
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -49,7 +54,7 @@ namespace Odds_Calculator
             {
                 rightPerCentBox.Text = "";
 
-                TryToAddPlaceholder(rightPerCentBox, false);
+                //TryToAddPlaceholder(rightPerCentBox, false);
             }
         }
 
@@ -72,44 +77,49 @@ namespace Odds_Calculator
             {
                 leftPerCentBox.Text = "";
 
-                TryToAddPlaceholder(leftPerCentBox, false);
+                //TryToAddPlaceholder(leftPerCentBox, false);
             }
         }
 
         private void leftPerCentBox_Enter(object sender, EventArgs e)
         {
-            TryToAddPlaceholder(leftPerCentBox, true);
+            //TryToAddPlaceholder(leftPerCentBox, true);
         }
 
         private void leftPerCentBox_Leave(object sender, EventArgs e)
         {
-            TryToAddPlaceholder(leftPerCentBox, false);
+            //TryToAddPlaceholder(leftPerCentBox, false);
         }
 
         private void rightPerCentBox_Enter(object sender, EventArgs e)
         {
-            TryToAddPlaceholder(rightPerCentBox, true);
+            //TryToAddPlaceholder(rightPerCentBox, true);
         }
 
         private void rightPerCentBox_Leave(object sender, EventArgs e)
         {
-            TryToAddPlaceholder(rightPerCentBox, false);
+            //TryToAddPlaceholder(rightPerCentBox, false);
         }
 
         private void proceedButton_Click(object sender, EventArgs e)
         {
+            Proceed();
+        }
+
+        private void Proceed()
+        {
             if (ValuesAllowed(leftPerCentBox, rightPerCentBox))
             {
                 CalculateOdds(double.Parse(breakpointBox.Text.Replace('.', ',')));
-
-                upperTeamNameDisplayBox.Text = leftTeamNameBox.Text;
-                lowerTeamNameDisplayBox.Text = rightTeamNameBox.Text;
             }
         }
 
         private void resetButton_Click(object sender, EventArgs e)
         {
-            Reset();
+            if (MessageBox.Show("Reset values?", AppName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Reset();
+            }
         }
 
         private void CalculateOdds(double breakpoint)
@@ -189,21 +199,194 @@ namespace Odds_Calculator
 
         private void Reset()
         {
-            leftPerCentBox.Text = "%";
-            leftPerCentBox.ForeColor = SystemColors.GrayText;
-            rightPerCentBox.Text = "%";
-            rightPerCentBox.ForeColor = SystemColors.GrayText;
+            leftPerCentBox.Text = "50";
+            rightPerCentBox.Text = "50";
 
-            leftOddsLabel.Text = "";
-            rightOddsLabel.Text = "";
+            leftOddsLabel.Text = "1.87";
+            rightOddsLabel.Text = "1.87";
 
-            leftTeamNameBox.Text = "";
-            rightTeamNameBox.Text = "";
+            upperTeamNameDisplayBox.Text = "ENCE";
+            lowerTeamNameDisplayBox.Text = "NiP Gaming";
 
-            upperTeamNameDisplayBox.Text = "";
-            lowerTeamNameDisplayBox.Text = "";
+            breakpointBox.Text = "1.87";
 
-            breakpointBox.Text = "1.85";
+            matchDateTextBox.Text = "Today";
+            matchTimeTextBox.Text = "20:00";
+        }
+
+        private void participant1OddsMinusButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int newPercentage = int.Parse(leftPerCentBox.Text) - 1;
+
+                if (newPercentage >= 0 && newPercentage <= 100)
+                {
+                    leftPerCentBox.Text = newPercentage.ToString();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void participant1OddsPlusButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int newPercentage = int.Parse(leftPerCentBox.Text) + 1;
+
+                if (newPercentage >= 0 && newPercentage <= 100)
+                {
+                    leftPerCentBox.Text = newPercentage.ToString();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void participant2OddsMinusButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int newPercentage = int.Parse(rightPerCentBox.Text) - 1;
+
+                if (newPercentage >= 0 && newPercentage <= 100)
+                {
+                    rightPerCentBox.Text = newPercentage.ToString();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void participant2OddsPlusButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int newPercentage = int.Parse(rightPerCentBox.Text) + 1;
+
+                if (newPercentage >= 0 && newPercentage <= 100)
+                {
+                    rightPerCentBox.Text = newPercentage.ToString();
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        private void leftTeamNameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Proceed();
+
+                e.Handled = true;
+            }
+        }
+
+        private void rightTeamNameBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Proceed();
+
+                e.Handled = true;
+            }
+        }
+
+        private void selectTeamComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // All themes: Unibet, Betsson, Betway, Veikkaus, GGBet
+        }
+
+        private void oddsLeftParticipantPictureBox_Click(object sender, EventArgs e)
+        {
+            SetImageForPictureBoxFromLocalSource(oddsLeftParticipantPictureBox);
+        }
+
+        private void oddsRightParticipantPictureBox_Click(object sender, EventArgs e)
+        {
+            SetImageForPictureBoxFromLocalSource(oddsRightParticipantPictureBox);
+        }
+
+        private void SetImageForPictureBoxFromLocalSource(PictureBox pictureBox)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog
+            {
+                Filter = "Image Files|*.jpg;*.jpeg;*.png;",
+                RestoreDirectory = true
+            };
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox.Image = new Bitmap(fileDialog.FileName);
+            }
+        }
+
+        private void unibetLeftOddsPanel_MouseEnter(object sender, EventArgs e)
+        {
+            unibetLeftOddsPanel.BackColor = UnibetHoverButtonBackColor();
+        }
+
+        private void unibetLeftOddsPanel_MouseLeave(object sender, EventArgs e)
+        {
+            unibetLeftOddsPanel.BackColor = UnibetDefaultButtonBackColor();
+        }
+
+        private void unibetRightOddsPanel_MouseEnter(object sender, EventArgs e)
+        {
+            unibetRightOddsPanel.BackColor = UnibetHoverButtonBackColor();
+        }
+
+        private void unibetRightOddsPanel_MouseLeave(object sender, EventArgs e)
+        {
+            unibetRightOddsPanel.BackColor = UnibetDefaultButtonBackColor();
+        }
+
+        private void leftOddsLabel_MouseEnter(object sender, EventArgs e)
+        {
+            unibetLeftOddsPanel.BackColor = UnibetHoverButtonBackColor();
+        }
+
+        private void leftOddsLabel_MouseLeave(object sender, EventArgs e)
+        {
+            unibetLeftOddsPanel.BackColor = UnibetDefaultButtonBackColor();
+        }
+
+        private void rightOddsLabel_MouseEnter(object sender, EventArgs e)
+        {
+            unibetRightOddsPanel.BackColor = UnibetHoverButtonBackColor();
+        }
+
+        private void rightOddsLabel_MouseLeave(object sender, EventArgs e)
+        {
+            unibetRightOddsPanel.BackColor = UnibetDefaultButtonBackColor();
+        }
+
+        private Color UnibetDefaultButtonBackColor()
+        {
+            return Color.FromArgb(20, 123, 69);
+        }
+        
+        private Color UnibetHoverButtonBackColor()
+        {
+            return Color.FromArgb(0, 88, 44);
+        }
+
+        private void showSettingsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!showSettingsCheckBox.Checked)
+            {
+                settingsPanel.Visible = false;
+            }
+            else
+            {
+                settingsPanel.Visible = true;
+            }
         }
     }
 }

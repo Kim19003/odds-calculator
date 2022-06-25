@@ -11,10 +11,11 @@ C:\Users\Kim\source\repos\Odds Calculator\Odds Calculator\obj\Debug\Odds Calcula
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\bin\Debug\Odds Calculator.exe.config
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\bin\Debug\Odds Calculator.exe
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\bin\Debug\Odds Calculator.pdb
-D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.csprojAssemblyReference.cache
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds_Calculator.Form1.resources
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds_Calculator.Properties.Resources.resources
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.GenerateResource.cache
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.CoreCompileInputs.cache
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.exe
 D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.pdb
+D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.AssemblyReference.cache
+D:\stuff\- GITHUB -\odds-calculator\Odds Calculator\obj\Debug\Odds Calculator.csproj.SuggestedBindingRedirects.cache
