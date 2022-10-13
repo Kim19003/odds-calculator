@@ -1,1 +1,1 @@
-<img src="https://i.imgur.com/ULmENxI.png" width="580" title="The software">
+<img src="https://i.imgur.com/AaX8j0A.png" width="580" title="The software">
