@@ -384,11 +384,11 @@ namespace Odds_Calculator
             // 
             this.rightOddsLabel.AutoSize = true;
             this.rightOddsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.rightOddsLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rightOddsLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rightOddsLabel.ForeColor = System.Drawing.Color.White;
-            this.rightOddsLabel.Location = new System.Drawing.Point(11, 7);
+            this.rightOddsLabel.Location = new System.Drawing.Point(12, 7);
             this.rightOddsLabel.Name = "rightOddsLabel";
-            this.rightOddsLabel.Size = new System.Drawing.Size(40, 19);
+            this.rightOddsLabel.Size = new System.Drawing.Size(36, 18);
             this.rightOddsLabel.TabIndex = 4;
             this.rightOddsLabel.Text = "1.87";
             this.rightOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -411,11 +411,11 @@ namespace Odds_Calculator
             // 
             this.leftOddsLabel.AutoSize = true;
             this.leftOddsLabel.BackColor = System.Drawing.Color.Transparent;
-            this.leftOddsLabel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.leftOddsLabel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.leftOddsLabel.ForeColor = System.Drawing.Color.White;
-            this.leftOddsLabel.Location = new System.Drawing.Point(11, 7);
+            this.leftOddsLabel.Location = new System.Drawing.Point(12, 7);
             this.leftOddsLabel.Name = "leftOddsLabel";
-            this.leftOddsLabel.Size = new System.Drawing.Size(40, 19);
+            this.leftOddsLabel.Size = new System.Drawing.Size(36, 18);
             this.leftOddsLabel.TabIndex = 3;
             this.leftOddsLabel.Text = "1.87";
             this.leftOddsLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
